@@ -24,23 +24,22 @@ class MyApp extends StatelessWidget {
   Widget _buildStory() {
     return Container(
       margin: EdgeInsetsGeometry.only(left: 6),
-      clipBehavior: Clip.hardEdge,
+      // clipBehavior: Clip.antiAlias,
 
-      width: 125,
+      width: 120,
       height: 200,
       decoration: BoxDecoration(
         color: Colors.grey,
         borderRadius: BorderRadius.circular(13),
-        border: Border.all(color: Colors.white70, width: 1)
+        border: Border.all(color: Colors.white70, width: 1),
+          image: DecorationImage(image: AssetImage("assets/images/sss.jpg"),
+          fit: BoxFit.cover,
+          )
+
       ),
+
       child: Stack(
         children: [
-          Image.asset(
-            "assets/images/sss.jpg",
-            width: 125,
-            height: 200,
-            fit: BoxFit.cover,
-          ),
           Positioned(
             left: 8,
             top: 8,
@@ -75,60 +74,62 @@ class MyApp extends StatelessWidget {
   }
 
   Widget _buildBody() {
-    return SingleChildScrollView(
-      physics: ClampingScrollPhysics(),
-      child: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisSize: MainAxisSize.max,
-          children: [
-            _buildRow(),
-            Text(
-              "Gretting Data",
-              style: TextStyle(
-                fontSize: 34,
-                color: Colors.red,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            Padding(
-              padding: EdgeInsetsGeometry.only(left: 5, right: 5),
-              child: SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  children: [
-                    _buildStory(),
-                    _buildStory(),
-                    _buildStory(),
-                    _buildStory(),
-                    _buildStory(),
-                    _buildStory(),
-                    _buildStory(),
-                    _buildStory(),
-                    _buildStory(),
-                    _buildStory(),
-                    _buildStory(),
-                    _buildStory(),
-                  ],
+    return SafeArea(
+      child: SingleChildScrollView(
+        physics: ClampingScrollPhysics(),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisSize: MainAxisSize.max,
+            children: [
+              _buildRow(),
+              Text(
+                "Gretting Data",
+                style: TextStyle(
+                  fontSize: 34,
+                  color: Colors.red,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
-            ),
-            _buildImage(),
-            Padding(
-              padding: EdgeInsetsGeometry.all(30),
-              child: Text(
-                "After a month and a half of spiraling conflict in the Middle East, the United States and Iran agreed to a two-week ceasefire on Tuesday – less than two hours before US President Donald Trump s deadline, after which he had promised to wipe out a whole civilizatio",
-                textAlign: TextAlign.justify,
-                style: TextStyle(fontSize: 20),
+              Padding(
+                padding: EdgeInsetsGeometry.only(left: 5, right: 5),
+                child: SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: [
+                      _buildStory(),
+                      _buildStory(),
+                      _buildStory(),
+                      _buildStory(),
+                      _buildStory(),
+                      _buildStory(),
+                      _buildStory(),
+                      _buildStory(),
+                      _buildStory(),
+                      _buildStory(),
+                      _buildStory(),
+                      _buildStory(),
+                    ],
+                  ),
+                ),
               ),
-            ),
-          ],
+              _buildImage(),
+              Padding(
+                padding: EdgeInsetsGeometry.all(30),
+                child: Text(
+                  "After a month and a half of spiraling conflict in the Middle East, the United States and Iran agreed to a two-week ceasefire on Tuesday – less than two hours before US President Donald Trump s deadline, after which he had promised to wipe out a whole civilizatio",
+                  textAlign: TextAlign.justify,
+                  style: TextStyle(fontSize: 20),
+                ),
+              ),
+            ],
+          ),
+          // Icon(CupertinoIcons.heart,color: Colors.amber,size: 56)
+          // Image.asset("assets/images/ddd.jpeg", width: 300,height: 200,fit: BoxFit.cover ,),
+          // child: Text("Gretting Data",
+          //   style: TextStyle(fontSize: 34,color: Colors.red,fontWeight: FontWeight.bold ) ,),
         ),
-        // Icon(CupertinoIcons.heart,color: Colors.amber,size: 56)
-        // Image.asset("assets/images/ddd.jpeg", width: 300,height: 200,fit: BoxFit.cover ,),
-        // child: Text("Gretting Data",
-        //   style: TextStyle(fontSize: 34,color: Colors.red,fontWeight: FontWeight.bold ) ,),
       ),
     );
   }
