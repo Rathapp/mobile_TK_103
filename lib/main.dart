@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/gestures.dart';
+// import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -98,6 +98,7 @@ class MyApp extends StatelessWidget {
                   scrollDirection: Axis.horizontal,
                   child: Row(
                     children: [
+                      _buildFirstStory(),
                       _buildStory(),
                       _buildStory(),
                       _buildStory(),
@@ -132,6 +133,71 @@ class MyApp extends StatelessWidget {
         ),
       ),
     );
+  }
+
+ Widget _buildFirstStory(){
+    return Container(
+      margin: EdgeInsetsGeometry.only(left: 6),
+      clipBehavior: Clip.antiAlias,
+
+      width: 120,
+      height: 200,
+      decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(13),
+          border: Border.all(color: Colors.grey, width: 1),
+          // image: DecorationImage(image: AssetImage("assets/images/sss.jpg"),
+          //   fit: BoxFit.cover,
+          // )
+
+      ),
+
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          Image.asset("assets/images/ddd.jpeg",height: 120,fit: BoxFit.cover,),
+          Expanded(
+            child: Stack(
+              clipBehavior: Clip.none,
+              children:[
+                Column(
+                  children: [
+                    Spacer(),
+                    Text("Create",style: TextStyle(fontSize: 13,color: Colors.black,fontWeight: FontWeight.bold),),
+                    Text("story",style: TextStyle(fontSize: 13,color: Colors.black,fontWeight: FontWeight.bold),),
+                    SizedBox(height: 5,)
+                  ],
+                ),
+
+                Positioned(
+                  top: -18,
+                  child: Container(
+                      padding: EdgeInsetsGeometry.all(2),
+                      width: 40,
+                      height: 40,
+                      decoration: BoxDecoration(
+                        color: Colors.indigoAccent,
+                        borderRadius: BorderRadius.circular(40),
+                        border: Border.all(
+                          color: Colors.white,
+                          width: 3,
+                        ),
+                      ),
+                      alignment: Alignment.center,
+                      child: Icon(Icons.add,color: Colors.white,size: 30,)
+                  ),
+                ),
+              ]
+
+            ),
+          ),
+
+          
+
+        ],
+      ),
+    );
+
   }
 
   Widget _buildRow() {
