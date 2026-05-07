@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
-  // const HomePage({super.key});
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
   HomePage({super.key});
@@ -10,8 +9,8 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         key: _scaffoldKey,
-        appBar: buildAppBar(),
-        drawer: buildDrawer(),
+        appBar: buildAppBar(context),
+        // drawer: buildDrawer(),
         endDrawer: Drawer(),
         body: _buildBody(),
         bottomNavigationBar: BottomNavigationBar(
@@ -116,11 +115,12 @@ class HomePage extends StatelessWidget {
     ),
   );
 
-  AppBar buildAppBar() {
+  AppBar buildAppBar(BuildContext context) {
     return AppBar(
 
       leading: IconButton(onPressed: (){
-        _scaffoldKey.currentState!.openDrawer();
+        // _scaffoldKey.currentState!.openDrawer();
+        Navigator.pop(context);
       }, icon: Icon(Icons.favorite,color: Colors.green,)),
       backgroundColor: Colors.indigoAccent,
       actions: [

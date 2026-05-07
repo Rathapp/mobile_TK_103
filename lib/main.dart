@@ -1,6 +1,7 @@
 
 // import 'package:flutter/gestures.dart';
 import 'package:everning_thu/home_page.dart';
+import 'package:everning_thu/log_in.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -16,8 +17,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-        home: HomePage());
+        home: LogIn()
+        // HomePage()
+        );
   }
-
 
 }
