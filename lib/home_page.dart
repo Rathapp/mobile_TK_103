@@ -16,6 +16,8 @@ class HomePage extends StatelessWidget {
         body: _buildBody(),
         bottomNavigationBar: BottomNavigationBar(
           iconSize: 30,
+          unselectedItemColor: Colors.white,
+          showUnselectedLabels: true,
           selectedItemColor: Colors.deepOrange,
           type: BottomNavigationBarType.fixed,
             backgroundColor: Colors.blue,
@@ -54,6 +56,7 @@ class HomePage extends StatelessWidget {
   }
 
   Drawer buildDrawer() => Drawer(
+    shape: RoundedRectangleBorder(borderRadius: BorderRadius.zero),
     backgroundColor: Colors.indigoAccent,
     child: SafeArea(
         child: Column(
